@@ -1,7 +1,7 @@
-<Nav page={myPage}/>
+<Nav segment={child.segment}/>
 
 <main>
-	<svelte:component this={Page} {...props}/>
+	<svelte:component this={child.component} {...child.props}/>
 </main>
 
 <script>
@@ -17,15 +17,6 @@
 			require('popper.js');
 			require('bootstrap');
 			require('bootstrap/dist/css/bootstrap.min.css');
-		},
-		computed: {
-			myPage: ({props}) => {
-				for (let item of navigationData) {
-					if (item.href == props.path) {
-						return item.title;
-					}
-				}
-			},
-		},
+		}
 	};
 </script>
