@@ -1,4 +1,4 @@
-const config = require('sapper/webpack/config.js');
+const config = require('sapper/config/webpack.js');
 const pkg = require('../package.json');
 
 module.exports = {
@@ -10,7 +10,8 @@ module.exports = {
 		__filename: false,
 	},
 	resolve: {
-		extensions: ['.js', '.json', '.html']
+		extensions: ['.js', '.json', '.html', '.ejs'],
+		mainFields: ['svelte', 'module', 'browser', 'main']
 	},
 	externals: Object.keys(pkg.dependencies),
 	module: {

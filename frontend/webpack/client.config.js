@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const config = require('sapper/webpack/config.js');
+const config = require('sapper/config/webpack.js');
 
 const mode = process.env.NODE_ENV;
 const isDev = mode === 'development';
@@ -8,7 +8,8 @@ module.exports = {
 	entry: config.client.entry(),
 	output: config.client.output(),
 	resolve: {
-		extensions: ['.js', '.json', '.html']
+		extensions: ['.js', '.json', '.html'],
+		mainFields: ['svelte', 'module', 'browser', 'main']
 	},
 	module: {
 		rules: [
