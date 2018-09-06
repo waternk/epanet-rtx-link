@@ -83,7 +83,7 @@
 				this.set({pending:true});
 				let run = !this.get().runInfo.run;
 				let opts = _.extend({body:JSON.stringify({run})}, shared.postOpts);
-				fetch('/api/run/',opts)
+				fetch('/api/run',opts)
 				.then(r => {
 					if (!r.ok) {
 						r.json().then(m => {
